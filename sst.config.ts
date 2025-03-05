@@ -20,7 +20,7 @@ export default $config({
     });
 
     // DEBUG: "prisma:client,prisma:engine"
-    let environment = { DATABASE_URL, DEBUG: "prisma:client,prisma:engine" };
+    let environment = { DATABASE_URL, DEBUG: "prisma:client,prisma:engine"};
 
     new sst.aws.Remix(`${$app.name}Ui`, {
       environment,

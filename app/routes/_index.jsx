@@ -11,8 +11,8 @@ export const meta = () => {
 
 export async function loader() {
   try {
-    const params = { where: { id: 1 } };
-    return await prisma.user.findUnique(params);
+    const params = { where: { userId: "1" } };
+    return await prisma.Users.findUnique(params);
   } catch (err) {
     console.log(err.stack);
     throw err;
