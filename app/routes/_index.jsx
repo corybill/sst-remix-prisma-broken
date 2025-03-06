@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { useLoaderData } from "@remix-run/react";
 
 const prisma = new PrismaClient();
 
@@ -20,9 +21,10 @@ export async function loader() {
 }
 
 export default function Index() {
+  const data = useLoaderData();
   return (
     <div>
-      Check logs for error
+      {JSON.stringify(data, null, 2)}
     </div>
   );
 }

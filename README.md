@@ -1,11 +1,13 @@
 # How To Recreate
+Before running any commands, make sure you have the AWS CLI installed and configured.
 
-```
-# Running dev works fine.
-npm install
+## Running In Dev
+Running in dev works fine.
 npx sst dev
-npx sst shell --target Prisma -- npx prisma migrate dev
 
-# If you look at the logs, you will see errors about loading prisma.
-npx sst deploy --stage test 
-```
+## Deploying Now Works Fine Too
+npx sst deploy --stage test
+
+In different shells, run these commands.
+npx sst tunnel --stage test
+npx sst shell --stage test --target Prisma -- npx prisma migrate deploy

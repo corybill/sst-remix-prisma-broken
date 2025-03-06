@@ -25,7 +25,12 @@ export default $config({
     new sst.aws.Remix(`${$app.name}Ui`, {
       environment,
       link: [rds],
-      vpc
+      vpc,
+      transform: {
+        server: (args) => {
+          args.copyFiles = [{ from: "node_modules/.prisma/client/" }]
+        }
+      }
     });
   }
 });
